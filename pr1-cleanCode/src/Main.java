@@ -10,7 +10,7 @@ public class Main {
         System.out.println("Available products:");
         for (int i = 0; i < productNames.length; i++) {
             System.out.println(productNames[i] + ": $" + prices[i] + " (Food: " + isFood[i] + ")");
-        }
+        }ttqsgdfafg
 
         System.out.println("User buys: Apple, Laptop and Smartphone");
         total += prices[0];
