@@ -1,34 +1,17 @@
-package src;
-
-public class Main {
+public class Main{
     public static void main(String[] args) {
-        String[] productNames = { "Apple", "Banana", "Orange", "Laptop", "Smartphone" };
-        double[] prices = { 1.25, 0.75, 1.50, 999.99, 799.99 };
-        boolean[] isFood = { true, true, true, false, false };
-        double total = 0;
+        ShoppingCart cart = new ShoppingCart();
 
-        System.out.println("Available products:");
-        for (int i = 0; i < productNames.length; i++) {
-            System.out.println(productNames[i] + ": $" + prices[i] + " (Food: " + isFood[i] + ")");
-        }ttqsgdfafg
+        Product apple = new FoodProduct("Apple", 1.25);
+        Product banana = new FoodProduct("Banana", 0.75);
+        Product orange = new FoodProduct("Orange", 1.50);
+        Product laptop = new ElectronicsProduct("Laptop", 999.99);
+        Product smartphone = new ElectronicsProduct("Smartphone", 799.99);
 
-        System.out.println("User buys: Apple, Laptop and Smartphone");
-        total += prices[0];
-        total += prices[3];
-        total += prices[4];
+        cart.addProduct(apple);
+        cart.addProduct(laptop);
+        cart.addProduct(smartphone);
 
-        System.out.println("Total price: $" + total);
-
-        double electronicsDiscount = 0;
-        if (!isFood[3]) {
-            electronicsDiscount += prices[3] * 0.15;
-        }
-        if (!isFood[4]) {
-            electronicsDiscount += prices[4] * 0.15;
-        }
-
-        total -= electronicsDiscount;
-        System.out.println("Electronics discount: $" + electronicsDiscount);
-        System.out.println("Final total: $" + total);
+        cart.displayCart();
     }
 }
